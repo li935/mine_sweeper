@@ -12,6 +12,7 @@ export default class MineStore {
     timer = 0;
     timerStart = 0;
 
+    halt = false;
     game = [];
     prevGame = [];
 
@@ -30,6 +31,7 @@ export default class MineStore {
             timer: observable,
             timerStart: observable,
 
+            halt: observable,
             game: observable,
             prevGame: observable,
 
@@ -82,12 +84,14 @@ export default class MineStore {
 
         this.game = newGame;
         this.prevGame = newGame;
+        this.halt = false;
     };
 
     win = () => {
         alert('Win!');
         this.showMine();
         setRecord(this);
+        this.halt = true;
 
         clearTimeout(this.timerStart);
 
@@ -106,6 +110,7 @@ export default class MineStore {
     lose = () => {
         alert('Bomb!');
         this.showMine();
+        this.halt = true;
 
         clearTimeout(this.timerStart);
     };

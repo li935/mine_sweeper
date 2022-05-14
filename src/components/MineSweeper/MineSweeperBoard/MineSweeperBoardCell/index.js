@@ -46,10 +46,10 @@ const MineSweeperBoardCell = (props) => {
     return (
         <td
             style={setStyle(mineSweeper.game[rowIndex][colIndex])}
-            onClick={() => mineSweeper.leftClick(rowIndex, colIndex)}
+            onClick={() => !mineSweeper.halt && mineSweeper.leftClick(rowIndex, colIndex)}
             onContextMenu={(e) => {
                 e.preventDefault();
-                mineSweeper.rightClick(rowIndex, colIndex);
+                !mineSweeper.halt && mineSweeper.rightClick(rowIndex, colIndex);
             }}
         >
             {setText(mineSweeper.game[rowIndex][colIndex])}
