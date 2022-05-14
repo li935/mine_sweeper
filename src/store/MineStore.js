@@ -133,7 +133,7 @@ export default class MineStore {
         if (clickedCell === CELL.NORMAL) {
             this.game[row][col] = checkCell(this, row , col);
             this.openCellCount += 1;
-        } else if (CELL.MINE) {
+        } else if (clickedCell === CELL.MINE) {
             this.game[row][col] = CELL.BOOM;
             this.lose();
         }
