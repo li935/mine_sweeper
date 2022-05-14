@@ -82,8 +82,6 @@ export default class MineStore {
 
         this.game = newGame;
         this.prevGame = newGame;
-
-        console.log(this.game);
     };
 
     win = () => {
