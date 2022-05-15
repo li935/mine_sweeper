@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {MobXProviderContext, observer} from "mobx-react";
 import {MineButtonAreaWrapper, RecordButtonWrapper, ResetButtonWrapper} from "./style";
+import shortId from "shortid";
 
 const MineSweeperInfo = () => {
     const {mineSweeper} = useContext(MobXProviderContext);
@@ -10,7 +11,7 @@ const MineSweeperInfo = () => {
     const showRecords = () => {
         return mineSweeper.records.map((record, index) => {
             return (
-                <div key={index}>
+                <div key={shortId.generate()}>
                     {index + 1}. {record} Sec
                 </div>
             )
