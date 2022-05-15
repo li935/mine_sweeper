@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MineSweeperWrapper = styled.div`
-  width: 110vw;
+  width: 100vw;
   margin: 25px 0 25px 0;
 `
 
