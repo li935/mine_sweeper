@@ -41,7 +41,7 @@ const setText = (cellType) => {
 
 const MineSweeperBoardCell = (props) => {
     const {mineSweeper} = useContext(MobXProviderContext);
-    const {colIndex, rowIndex} = props;
+    const {rowIndex, colIndex} = props;
 
     return (
         <td
