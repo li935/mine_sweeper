@@ -8,7 +8,7 @@ const MineSweeperBoardRow = (props) => {
 
     return (
         <tr>
-            {mineSweeper.game.map((v, i) =>
+            {mineSweeper.game[rowIndex].map((v, i) =>
                 <MineSweeperBoardCell
                     key={i}
                     rowIndex={rowIndex}
