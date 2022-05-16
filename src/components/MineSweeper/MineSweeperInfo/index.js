@@ -2,6 +2,9 @@ import React, {useContext, useState} from 'react';
 import {MobXProviderContext, observer} from "mobx-react";
 import {MineButtonAreaWrapper, RecordButtonWrapper, ResetButtonWrapper} from "./style";
 import shortId from "shortid";
+import MineSweeperInfoElapsedTime from "./MineSweeperInfoElapsedTime";
+import MineSweeperInfoMineCount from "./MineSweeperInfoMineCount";
+import MineSweeperInfoBestRecord from "./MineSweeperInfoBestRecord";
 
 const MineSweeperInfo = () => {
     const {mineSweeper} = useContext(MobXProviderContext);
@@ -20,9 +23,9 @@ const MineSweeperInfo = () => {
 
     return (
         <div>
-            <h3>Mine : {mineSweeper.mine}</h3>
-            <h3>Elapsed Time : {mineSweeper.timer} Sec</h3>
-            <h3>Best Record : {mineSweeper.bestRecord} Sec</h3>
+            <MineSweeperInfoMineCount/>
+            <MineSweeperInfoElapsedTime/>
+            <MineSweeperInfoBestRecord/>
             <MineButtonAreaWrapper>
                 <ResetButtonWrapper margin={5}>
                     <button onClick={mineSweeper.restart}>
