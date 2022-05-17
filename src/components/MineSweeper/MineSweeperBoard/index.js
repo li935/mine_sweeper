@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import {MobXProviderContext, observer} from "mobx-react";
-import {MineSweeperTable} from "./style";
+import {MineSweeperTable, MineSweeperTitle} from "./style";
 import MineSweeperBoardRow from "./MineSweeperBoardRow";
 
 const MineSweeperBoard = () => {
@@ -12,7 +12,7 @@ const MineSweeperBoard = () => {
 
     return (
         <div>
-            <h1>Mine Sweeper</h1>
+            <MineSweeperTitle>Mine Sweeper</MineSweeperTitle>
             <MineSweeperTable>
                 <tbody>
                 {mineSweeper.game.map((v, i) =>
