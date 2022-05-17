@@ -151,10 +151,6 @@ export default class MineStore {
                 }
             })
 
-            if (mineCount === CELL.OPENED) {
-                return "ㅤ";
-            }
-
             return mineCount;
         }
 

@@ -1,35 +1,14 @@
 import React, {useContext} from 'react';
-import {CELL} from "../../../../constants";
 import {MobXProviderContext, observer} from "mobx-react";
-
-const setStyle = (cellType) => {
-    switch (cellType) {
-        case CELL.NORMAL:
-        case CELL.MINE:
-            return {
-                background: 'grey',
-                cursor: 'pointer',
-            }
-        case CELL.FLAG:
-        case CELL.BOOM:
-            return {
-                background: 'blue',
-                cursor: 'pointer',
-            };
-        case CELL.OPENED:
-        default:
-            return {
-                background: 'white',
-                cursor: 'pointer',
-            };
-    }
-};
+import {CELL} from "../../../../constants";
+import {MineSweeperCellWrapper} from "./style";
 
 const setText = (cellType) => {
     switch (cellType) {
+        case CELL.OPENED:
         case CELL.NORMAL:
         case CELL.MINE:
-            return '　';
+            return '';
         case CELL.FLAG:
             return '🚩';
         case CELL.BOOM:
@@ -44,8 +23,8 @@ const MineSweeperBoardCell = (props) => {
     const {rowIndex, colIndex} = props;
 
     return (
-        <td
-            style={setStyle(mineSweeper.game[rowIndex][colIndex])}
+        <MineSweeperCellWrapper
+            cellType={mineSweeper.game[rowIndex][colIndex]}
             onClick={() => !mineSweeper.halt && mineSweeper.leftClick(rowIndex, colIndex)}
             onContextMenu={(e) => {
                 e.preventDefault();
@@ -53,7 +32,7 @@ const MineSweeperBoardCell = (props) => {
             }}
         >
             {setText(mineSweeper.game[rowIndex][colIndex])}
-        </td>
+        </MineSweeperCellWrapper>
     );
 };
 
