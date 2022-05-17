@@ -11,7 +11,7 @@ const handleBackgroundColor = cellType => {
             return 'blue';
         case CELL.OPENED:
         default:
-            return 'white';
+            return 'lightgrey';
     }
 }
 
