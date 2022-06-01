@@ -19,5 +19,6 @@ export const MineSweeperCellWrapper = styled.td`
   width: 25px;
   height: 25px;
   cursor: pointer;
+  text-align: center;
   background-color: ${props => handleBackgroundColor(props["cellType"])};
 `

@@ -6,10 +6,10 @@ const MineSweeper = () => {
     return (
         <MineSweeperWrapper>
             <MineSweeperBoardWrapper>
-                <MineSweeperBoard/>
-            </MineSweeperBoardWrapper>
-            <MineSweeperBoardWrapper>
-                <MineSweeperInfo/>
+                <div>
+                    <MineSweeperBoard/>
+                    <MineSweeperInfo/>
+                </div>
             </MineSweeperBoardWrapper>
         </MineSweeperWrapper>
     );
