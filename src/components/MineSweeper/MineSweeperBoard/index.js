@@ -1,12 +1,13 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useLayoutEffect} from 'react';
 import {MobXProviderContext, observer} from "mobx-react";
 import {MineSweeperTable, MineSweeperTitle} from "./style";
 import MineSweeperBoardRow from "./MineSweeperBoardRow";
+import shortId from "shortid";
 
 const MineSweeperBoard = () => {
     const {mineSweeper} = useContext(MobXProviderContext);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         mineSweeper.init();
     }, [mineSweeper]);
 
@@ -15,10 +16,10 @@ const MineSweeperBoard = () => {
             <MineSweeperTitle>Mine Sweeper</MineSweeperTitle>
             <MineSweeperTable>
                 <tbody>
-                {mineSweeper.game.map((v, i) =>
+                {mineSweeper.game.map((v, rowIndex) =>
                     <MineSweeperBoardRow
-                        key={i}
-                        rowIndex={i}
+                        key={shortId.generate()}
+                        rowIndex={rowIndex}
                     />
                 )}
                 </tbody>
