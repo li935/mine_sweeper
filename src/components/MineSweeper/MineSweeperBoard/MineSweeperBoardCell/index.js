@@ -22,14 +22,17 @@ const MineSweeperBoardCell = (props) => {
     const {mineSweeper} = useContext(MobXProviderContext);
     const {rowIndex, colIndex} = props;
 
+    const handleCellLeftClick = () => !mineSweeper.halt && mineSweeper.leftClick(rowIndex, colIndex);
+    const handleCellRightClick = (e) => {
+        e.preventDefault();
+        !mineSweeper.halt && mineSweeper.rightClick(rowIndex, colIndex);
+    };
+
     return (
         <MineSweeperCellWrapper
             cellType={mineSweeper.game[rowIndex][colIndex]}
-            onClick={() => !mineSweeper.halt && mineSweeper.leftClick(rowIndex, colIndex)}
-            onContextMenu={(e) => {
-                e.preventDefault();
-                !mineSweeper.halt && mineSweeper.rightClick(rowIndex, colIndex);
-            }}
+            onClick={handleCellLeftClick}
+            onContextMenu={handleCellRightClick}
         >
             {setText(mineSweeper.game[rowIndex][colIndex])}
         </MineSweeperCellWrapper>
