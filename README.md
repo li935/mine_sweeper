@@ -1,11 +1,11 @@
 # 지뢰찾기
 
-### 목적
+### `목적`
 
 - React와 같은 framework, library를 사용하는 이유, 설계 의의를 이해하고 그에 맞게 코드를 작성할 수 있는가
 - application state를 알맞게 설계할 수 있는가
 
-### 라이브러리
+### `라이브러리`
 - MobX
 - styled-components
 
