@@ -1,4 +1,4 @@
-# 지뢰찾기 - https://simple-mine-sweeper.herokuapp.com/
+# 지뢰찾기
 
 ### 목적
 
